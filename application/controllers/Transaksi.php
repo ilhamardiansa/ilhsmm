@@ -54,9 +54,13 @@ class Transaksi extends CI_Controller
         if ($this->form_validation->run() == false){
         $data['user'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
         $data['categoris'] = $this->db->get_where('categoris')->result();
-          $dariDB = $this->Kode_m->kode();
-        $nourut = substr($dariDB, 3, 4);
-        $kodeBarangSekarang = "ILH".$nourut + 1;
+        $dariDB = $this->Kode_m->kode();
+        if($dariDB) {
+          $nourut = substr($dariDB, 3, 4);
+          $kodeBarangSekarang = "ILH" . str_pad($nourut + 1, 4, "0", STR_PAD_LEFT);
+        } else {
+          $kodeBarangSekarang = "ILH0001";
+        }
         $data['kode'] = $kodeBarangSekarang;
 
         $config = $this->Webconfig->config();

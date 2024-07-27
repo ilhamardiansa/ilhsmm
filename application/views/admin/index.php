@@ -23,7 +23,7 @@
                             <div class="col-md-6 col-xl-3">
                                 <div class="card bg-primary">
                                     <div class="card-body text-center">
-                                       <h3 style="color:white;">Rp. <?php echo number_format($sumpemesanan,0,',','.'); ?> (<?php echo $countpemesanan?>)</h3>
+                                       <h3 style="color:white;">Rp. <?php echo $sumpemesanan ? number_format($sumpemesanan,0,',','.') : '0'; ?> (<?php echo $countpemesanan?>)</h3>
                                        <h4 style="color:white;"><b>TOTAL PEMESANAN</b></h4>
                                     </div>
                                 </div> <!-- end card-->
@@ -31,7 +31,7 @@
                                 <div class="col-md-6 col-xl-3">
                                 <div class="card bg-primary">
                                     <div class="card-body text-center">
-                                       <h3 style="color:white;"> Rp. <?php echo number_format($sumdeposit,0,',','.'); ?> (<?php echo $countdeposit?>)</h3>
+                                       <h3 style="color:white;"> Rp. <?php echo $sumdeposit ? number_format($sumdeposit,0,',','.') : '0'; ?> (<?php echo $countdeposit?>)</h3>
                                        <h4 style="color:white;"><b>TOTAL DEPOSIT</b></h4>
                                     </div>
                             </div> <!-- end col -->
